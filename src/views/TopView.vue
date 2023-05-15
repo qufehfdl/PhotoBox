@@ -2,9 +2,9 @@
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" @click="$router.push({ name: 'home' })"><i class="bi bi-box-fill"></i> 사진상자</a>
-      <form class="d-flex mt-3" role="search">
+      <form class="d-flex mt-3" role="search" style="margin-bottom: 1rem !important;">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-light" type="submit">Search</button>
       </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -86,7 +86,9 @@ export default {
   components: {
   },
   data() {
-    return {};
+    return {
+      user_login: false,
+    };
   },
   computed: {},
   mounted() {
@@ -96,15 +98,23 @@ export default {
   created() { }
 }
 </script>
-<style>
+<style scoped>
 .navbar {
-  background-color: rgb(228, 203, 203);
+  height: auto;
+  background-image: url('../assets/top-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .offcanvas-header {
-  background-color: rgb(228, 203, 203);
-  /* 색상 코드를 바꾸세요 */
+  background-image: url('../assets/top-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
 }
 
@@ -117,5 +127,4 @@ export default {
   margin-left: 180px;
   /* 필요한 만큼의 마진 값을 지정해주세요. */
 }
-
 </style>

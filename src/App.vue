@@ -6,12 +6,9 @@
     <div class="main">
       <router-view></router-view>
     </div>
-    <div class="bottom">
-      하단 내용
-    </div>
   </div>
+  <h4>안녕{{ session.user_id }}{{ session.user_login }}</h4>
 </template>
-
 <script>
 import TopView from "./views/TopView.vue";
 export default {
@@ -19,36 +16,41 @@ export default {
     TopView
   },
   data() {
-    return {};
+    return {
+
+    };
   },
   methods: {},
-  computed: {},
+  computed: {
+    session() {
+      return this.$store.getters.getSession;
+    }
+  },
   mounted() { },
   created() { }
 };
 </script>
-
 <style>
 .container {
-  height: 100vh; /* 화면 전체 높이를 사용 */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  /* 화면 전체 높이를 사용 */
   display: flex;
+  /* 자식 요소들을 수직으로 배치 */
   flex-direction: column;
-  justify-content: space-between;
+  /* 자식 요소들을 수직으로 배치 */
+  justify-content: flex-start;
+  /* 자식 요소를 수직 방향으로 정렬 */
 }
 
 .top {
-  background-color: aquamarine;
+  width: 100%;
+  height: 15%;
 }
 
 .main {
-  flex-grow: 1; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bottom {
-  background-color: rgb(98, 198, 238);
+  width: 100%;
+  height: 85%;
 }
 </style>
 
