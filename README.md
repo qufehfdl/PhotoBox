@@ -8,6 +8,11 @@ src<br>
 ├── store    // Vuex 스토어 파일<br>
 └── views   // 페이지 파일<br>
 
+# 헤맸던 로직
+
+  - vue-session을 사용하고 싶었지만 vue3에서는 전통적인 세션 관리 라이브러리가 공식적으로 지원되지 않는다고 한다 그래서 sessionStorage 와 vuex를 사용해서 세션기능을 구현하였다
+  - 
+
 # 만들면서 공부해보자
 
 😊 this <hr>
@@ -44,7 +49,3 @@ src<br>
     <router-view @close="toggle = false"></router-view>  #부모 <자식컴포넌트 @작명="받으면할일">
     아래 메서드 영역에서 만든다면 this.$emit() !!
 
-# 헤맸던 로직
-
-  - vue-session을 사용하고 싶었지만 vue3에서는 전통적인 세션 관리 라이브러리가 공식적으로 지원되지 않는다고 한다 그래서 sessionStorage 와 vuex를 사용해서 세션기능을 구현하였다
-  - 
