@@ -34,13 +34,9 @@ export default {
 .container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100vh;
-  /* 화면 전체 높이를 사용 */
   display: flex;
-  /* 자식 요소들을 수직으로 배치 */
   flex-direction: column;
-  /* 자식 요소들을 수직으로 배치 */
   justify-content: flex-start;
-  /* 자식 요소를 수직 방향으로 정렬 */
 }
 
 .top {
