@@ -1,0 +1,20 @@
+package com.hrilke.project.mapper;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import com.hrilke.project.beans.User;
+
+@Mapper
+public interface UserMapper {
+
+	// 회원가입
+	@Insert("insert into User(user_name , user_id , user_password , user_email) values(#{user_name},#{user_id},#{user_password},#{user_email})")
+	public void addUser(User user);
+
+	// 로그인 : 한 유저의 정보 가져오기
+	@Select("select user_id , user_name from User where user_id = #{user_id} and user_password = #{user_password}")
+	public User getOneUser(User user);
+
+}
