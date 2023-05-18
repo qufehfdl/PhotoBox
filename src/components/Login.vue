@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingInput" ref="id">
-      <label for="floatingInput">ID</label>
+    <div>
+      <input type="text">
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" ref="password">
-      <label for="floatingPassword">Password</label>
+    <div>
+      <input type="password">
     </div>
 
-    <div class="d-grid gap-2  mx-auto">
+    <div>
       <button class="btn btn-primary" type="button" @click="login">로그인</button>
     </div>
     <button type="button" class="btn btn-secondary" @click="$router.push({ name: 'join' })">회원가입</button>

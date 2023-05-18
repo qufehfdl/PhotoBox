@@ -1,15 +1,19 @@
 <template>
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
+      <!-- 메인아이콘 -->
       <a class="navbar-brand" @click="$router.push({ name: 'home' })"><i class="bi bi-box-fill"></i> 사진상자</a>
+      <!-- 검색 -->
       <form class="d-flex mt-3" role="search" style="margin-bottom: 1rem !important;">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-light" type="submit">Search</button>
       </form>
+      <!-- 토글 버튼 -->
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- 사이드바 시작 -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-box-fill"></i> 사진상자</h5>
@@ -21,7 +25,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" @click="$router.push({ name: 'mypage' })">마이페이지</a>
+              <a class="nav-link active" aria-current="page" href="#" @click="$router.push({ name: 'login' })">마이페이지</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,10 +109,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
 }
 
 .offcanvas-header {
@@ -125,6 +125,5 @@ export default {
 
 .offcanvas-header span h3 {
   margin-left: 180px;
-  /* 필요한 만큼의 마진 값을 지정해주세요. */
 }
 </style>

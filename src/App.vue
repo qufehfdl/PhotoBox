@@ -1,19 +1,20 @@
 <template>
   <div class="container">
-    <div class="top">
-      <TopView></TopView>
-    </div>
-    <div class="main">
-      <router-view></router-view>
+    <div class="row">
+      <div class="col-12" id="top">
+        <Top></Top>
+      </div>
+      <div class="col-12" id="main">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
-  <h4>안녕{{ session.user_id }}{{ session.user_login }}</h4>
 </template>
 <script>
-import TopView from "./views/TopView.vue";
+import Top from "./views/Top.vue";
 export default {
   components: {
-    TopView
+    Top
   },
   data() {
     return {
@@ -34,19 +35,13 @@ export default {
 .container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  position: relative;
 }
 
-.top {
-  width: 100%;
-  height: 15%;
-}
-
-.main {
-  width: 100%;
-  height: 85%;
+#main {
+  position: absolute;
+  /* top: 200px; */
+  top: 100px;
 }
 </style>
 

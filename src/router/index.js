@@ -9,17 +9,17 @@ const routes = [
   {
     path: '/mypage',
     name: 'mypage', 
-    component: () => import('../components/LoginView.vue')
+    component: () => import('../components/MyPage.vue')
   },
   {
     path: '/join',
     name: 'join', 
-    component: () => import('../components/JoinView.vue')
+    component: () => import('../components/Join.vue')
   },
   {
     path: '/login',
     name: 'login', 
-    component: () => import('../components/LoginView.vue')
+    component: () => import('../components/Login.vue')
   }
 ]
 
