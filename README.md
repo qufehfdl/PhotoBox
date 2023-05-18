@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# photo_front
-=======
 # SPA/PWA 커뮤니티
->>>>>>> 949ef4b436425fa925da8d57ad564c3cbafbcb07
-
 src<br>
 ├── api          // 서버 통신 로직<br>
 ├── assets      // 이미지 , 폰트 등 정적 파일<br>
@@ -20,29 +14,6 @@ src<br>
 
 # 만들면서 공부해보자
 
-<<<<<<< HEAD
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# SPA/PWA 커뮤니티
-
-src<br>
-├── api          // 서버 통신 로직<br>
-├── assets      // 이미지 , 폰트 등 정적 파일<br>
-├── components // 컴포넌트 파일<br>
-├── router    // 라우터 파일<br>
-├── store    // Vuex 스토어 파일<br>
-└── views   // 페이지 파일<br>
-
-# 헤맸던 로직
-
-  - vue-session을 사용하고 싶었지만 vue3에서는 전통적인 세션 관리 라이브러리가 공식적으로 지원되지 않는다고 한다 그래서 sessionStorage 와 vuex를 사용해서 세션기능을 구현하였다
-  - 
-
-# 만들면서 공부해보자
-
-=======
->>>>>>> 949ef4b436425fa925da8d57ad564c3cbafbcb07
 😊 this <hr>
 
     마운트 영역에서 this가 바인딩되는 이유는 Vue 컴포넌트 인스턴스가 생성되고 
@@ -76,8 +47,4 @@ src<br>
     <button id="test" @click="$emit('close')">X</button> #자식 $emit(작명, 전달할자료)
     <router-view @close="toggle = false"></router-view>  #부모 <자식컴포넌트 @작명="받으면할일">
     아래 메서드 영역에서 만든다면 this.$emit() !!
-<<<<<<< HEAD
 
->>>>>>> ad1d82bc5adbf80ffe489c552e95e9c26f701a3f
-=======
->>>>>>> 949ef4b436425fa925da8d57ad564c3cbafbcb07
