@@ -1,0 +1,5 @@
+if (window.cordova && window.cordova.plugins && window.cordova.plugins.barcodeScanner) {
+  //코르도바 플러그인 사용하는것으로 분기
+} else {
+	alert("앱 설치 후 이용!");
+}
