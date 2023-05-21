@@ -48,16 +48,19 @@ export default {
             }
 
             axios.post('/root/mypage', {
+                no: this.$store.state.no,
                 user_id: this.$store.state.user_id,
                 user_name: name,
                 user_password: password,
             })
                 .then(response => {
                     const userData = {
+                        no: response.data.no,
                         user_id: response.data.user_id,
                         user_name: response.data.user_name,
                         user_login: true,
                     };
+                    sessionStorage.setItem("no", userData.no);
                     sessionStorage.setItem("user_id", userData.user_id);
                     sessionStorage.setItem("user_name", userData.user_name);
                     sessionStorage.setItem("user_login", userData.user_login);

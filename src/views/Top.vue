@@ -37,9 +37,10 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item" v-if="$store.state.user_login == true">
-              <div class="stack_box mb-3"><i class="bi bi-boxes"></i> 상자 쌓기</div>
-              <div class="stack_box mb-3"><a class="nav-link active" aria-current="page"
-                  @click="$router.push({ name: 'mypage' })">마이페이지</a></div>
+              <div class="stack_box mb-3" @click="$router.push({ name: 'write' })"><i class="bi bi-boxes"></i>&nbsp;상자 쌓기
+              </div>
+              <div class="stack_box mb-3" @click="$router.push({ name: 'mypage' })"><a class="nav-link active"
+                  aria-current="page">마이페이지</a></div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -126,6 +127,7 @@ export default {
       this.isMobile2 = window.innerWidth >= 533; // Adjust the breakpoint as needed
     },
     logout() {
+      sessionStorage.removeItem("no");
       sessionStorage.removeItem("user_id");
       sessionStorage.removeItem("user_name");
       sessionStorage.removeItem("user_login");
