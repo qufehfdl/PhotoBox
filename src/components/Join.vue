@@ -56,10 +56,6 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            user: {
-                name: 'John Doe',
-                age: 30
-            }
         }
     },
     methods: {
@@ -118,6 +114,5 @@ export default {
 #login p {
     text-align: center;
     margin: auto;
-    color: aliceblue;
 }
 </style>

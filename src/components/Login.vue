@@ -84,7 +84,6 @@ export default {
 #login p {
   text-align: center;
   margin: auto;
-  color: aliceblue;
 }
 
 .row button {

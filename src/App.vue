@@ -40,7 +40,7 @@ export default {
 
 #main {
   position: absolute;
-  top: 30%;
+  top: 20%;
 }
 </style>
 

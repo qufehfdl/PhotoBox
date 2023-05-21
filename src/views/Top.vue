@@ -2,7 +2,7 @@
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <!-- 메인아이콘 -->
-      <a class="navbar-brand" @click="$router.push({ name: 'home' })"><i class="bi bi-box-fill"></i> 사진상자</a>
+      <a class="navbar-brand" @click="$router.push({ name: 'home' })"><i class="bi bi-box"></i> 사진상자</a>
       <!-- 토글 버튼 -->
       <div id="side_button1" v-show="isMobile1">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -25,19 +25,21 @@
       <!-- 사이드바 시작 -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-box-fill"></i> 사진상자</h5>
-          <span v-if="$store.state.user_login == true">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-box"></i> 사진상자</h5>
+          <span v-if="$store.state.user_login != null">
             {{ $store.state.user_name }}님 안녕하세요
           </span>
           <span v-if="$store.state.user_login == null">
-            <h3><i class="bi bi-person-add" @click="$router.push({ name: 'login' })"></i></h3>
+            <h1><i class="bi bi-person-add" @click="$router.push({ name: 'login' })"></i></h1>
           </span>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item" v-if="$store.state.user_login == true">
-              <a class="nav-link active" aria-current="page" href="#" @click="$router.push({ name: 'mypage' })">마이페이지</a>
+              <div class="stack_box mb-3"><i class="bi bi-boxes"></i> 상자 쌓기</div>
+              <div class="stack_box mb-3"><a class="nav-link active" aria-current="page"
+                  @click="$router.push({ name: 'mypage' })">마이페이지</a></div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,6 +94,10 @@
             </li>
           </ul>
         </div>
+        <div>
+          <button v-if="$store.state.user_login != null" type="button" class="btn btn-danger" @click="logout"
+            style="width: 100%;">로그아웃</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -118,6 +124,12 @@ export default {
     checkWindowSize() {
       this.isMobile1 = window.innerWidth <= 532; // Adjust the breakpoint as needed
       this.isMobile2 = window.innerWidth >= 533; // Adjust the breakpoint as needed
+    },
+    logout() {
+      sessionStorage.removeItem("user_id");
+      sessionStorage.removeItem("user_name");
+      sessionStorage.removeItem("user_login");
+      location.href = '/';
     }
   },
   computed: {},
@@ -146,5 +158,17 @@ export default {
 
 .offcanvas-header span h3 {
   margin-left: 180px;
+}
+
+.stack_box {
+  background-image: url('../assets/stack.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 </style>
