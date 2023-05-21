@@ -17,8 +17,8 @@ public class UserService {
 
 	public void addUser(User user) {
 		userDAO.addUser(user);
-	} 
-     
+	}
+
 	public User getOneUser(User user) {
 		User DBUser = userDAO.getOneUser(user);
 		if (DBUser != null) {
@@ -27,5 +27,9 @@ public class UserService {
 			loginUser.setUser_login(true);
 		}
 		return DBUser;
+	}
+
+	public void modifyUser(User user) {
+		userDAO.modifyUser(user);
 	}
 }

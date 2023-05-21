@@ -3,6 +3,7 @@ package com.hrilke.project.mapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.hrilke.project.beans.User;
 
@@ -17,4 +18,7 @@ public interface UserMapper {
 	@Select("select user_id , user_name from User where user_id = #{user_id} and user_password = #{user_password}")
 	public User getOneUser(User user);
 
+	// 정보 수정
+	@Update("update User set user_name = #{user_name} , user_password = #{user_password} where user_id= #{user_id}")
+	public void modifyUser(User user);
 }
