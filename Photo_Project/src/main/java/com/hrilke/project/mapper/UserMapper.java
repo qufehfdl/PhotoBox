@@ -15,7 +15,7 @@ public interface UserMapper {
 	public void addUser(User user);
 
 	// 로그인 : 한 유저의 정보 가져오기
-	@Select("select user_id , user_name from User where user_id = #{user_id} and user_password = #{user_password}")
+	@Select("select no , user_id , user_name from User where user_id = #{user_id} and user_password = #{user_password}")
 	public User getOneUser(User user);
 
 	// 정보 수정

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hrilke.project.beans.User;
 import com.hrilke.project.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/root")
 @RequiredArgsConstructor
 public class MainController {
-
 	private final UserService userService;
 
 	@PostMapping("/join")
@@ -25,10 +25,11 @@ public class MainController {
 
 	@PostMapping("/login")
 	public User login(@RequestBody User user) {
-		User loginUser = userService.getOneUser(user);
-		return loginUser;
+		User DBUser = userService.getOneUser(user);
+		DBUser.setUser_login(true);
+		return DBUser;
 	}
-
+ 
 	@PostMapping("/mypage")
 	public User myPage(@RequestBody User user) {
 		userService.modifyUser(user);
