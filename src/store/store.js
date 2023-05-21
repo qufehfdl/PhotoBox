@@ -1,24 +1,19 @@
-import {createStore} from 'vuex';
-
+import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-    session: {
-      user_id: '',
-      user_name: '',
-      user_login: false
-    }
+    user_id: sessionStorage.getItem("user_id"),
+    user_name: sessionStorage.getItem("user_name"),
+    user_login: sessionStorage.getItem("user_login"),
   },
   mutations: {
-    SET_SESSION(state, session) {
-      state.session = session;
-    }
+    updateUser(state, payload) {
+      state.user_id = payload.user_id;
+      state.user_name = payload.user_name;
+      state.user_login = payload.user_login;
+    },
   },
-  getters: {
-    getSession(state) {
-      return state.session;
-    }
-  }
+  getters: {},
 });
 
 export default store;

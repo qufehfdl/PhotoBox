@@ -1,23 +1,23 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-12" id="login">
-                <p style="color: white;">로그인</p>
+            <div class="col-12 mb-4" id="login">
+                <p style="color: white;">회원가입</p>
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-4">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" ref="name" placeholder="이름을 입력하세요">
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-4">
                 <label for="id" class="form-label">ID</label>
                 <input type="text" class="form-control" id="id" ref="id" placeholder="이름을 입력하세요" style="float: left;">
                 <button type="button" class="btn btn-warning btn-sm" style="margin-left: 20px; ">ID 중복 확인</button>
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-4">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" ref="password" placeholder="비밀번호를 입력하세요">
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-4">
                 <label for="password-confirm" class="form-label">Password Check</label>
                 <input type="password" class="form-control" id="password-confirm" ref="password_confirm"
                     placeholder="비밀번호를 확인">
