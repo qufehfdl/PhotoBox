@@ -14,9 +14,9 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/root")
 @RequiredArgsConstructor
 public class MainController {
-	
+
 	private final UserService userService;
-	
+
 	@PostMapping("/join")
 	public boolean join(@RequestBody User user) {
 		userService.addUser(user);
@@ -24,9 +24,15 @@ public class MainController {
 	}
 
 	@PostMapping("/login")
-	public User main(@RequestBody User user) {
-		User loginUser = userService.getOneUser(user); 
-		return loginUser;   
-	} 
+	public User login(@RequestBody User user) {
+		User loginUser = userService.getOneUser(user);
+		return loginUser;
+	}
+
+	@PostMapping("/mypage")
+	public User myPage(@RequestBody User user) {
+		userService.modifyUser(user);
+		return user;
+	}
 
 }

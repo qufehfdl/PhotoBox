@@ -20,4 +20,8 @@ public class UserDAO {
 		return userMapper.getOneUser(user);
 	}
 
+	public void modifyUser(User user) {
+		userMapper.modifyUser(user);
+	}
+
 }
